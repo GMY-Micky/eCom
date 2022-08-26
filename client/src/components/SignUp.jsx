@@ -15,7 +15,7 @@ const SignUp = () => {
 
   const navigate = useNavigate();
 
-  const submitHandle = (e) => {
+  async function submitHandle(e) {
     e.preventDefault();
 
     if (
@@ -38,18 +38,29 @@ const SignUp = () => {
           password,
           confirmPassword,
         };
-        localStorage.clear();
-        localStorage.setItem("Data", JSON.stringify(data));
+
+        const response = await fetch("http://localhost:8000/api/register", {
+          method: "POST",
+          headers: {
+            "content-Type": "application/json",
+          },
+          body: JSON.stringify(data),
+        });
+
+        const res = data.json();
+        console.log(res);
+        // localStorage.clear();
+        // localStorage.setItem("Data", JSON.stringify(data));
         if (warning) setWarning(false);
         if (notEqual) setNotEqual(false);
         setDisable(true);
-        navigate("/sign-in");
+        //navigate("/sign-in");
       }
     } else {
       setWarning(true);
       if (notEqual) setNotEqual(false);
     }
-  };
+  }
 
   return (
     <div className="sign-up-form" style={{ marginTop: "60px" }}>
