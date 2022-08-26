@@ -1,0 +1,137 @@
+.header {
+  background-color: rgb(238, 238, 238);
+  height: 60px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  z-index: 10;
+  min-width: 350px;
+  overflow: hidden;
+  width: 100vw;
+}
+
+.left-head {
+  display: flex;
+}
+
+.sidebar-menu-btn {
+  display: none;
+  border: none;
+  font-size: 1.1rem;
+  padding: 3px;
+  padding: 10px;
+  background-color: rgb(238, 238, 238);
+  cursor: pointer;
+}
+
+.search-btn {
+  border: none;
+  font-size: 1.1rem;
+  padding: 3px;
+  padding: 10px;
+  background-color: rgb(238, 238, 238);
+}
+
+.search-btn:hover {
+  color: orange;
+}
+
+.header-search .search-bar {
+  height: 35px;
+  outline: none;
+  border: none;
+  margin-left: 5px;
+  background-color: rgb(226, 226, 226);
+  color: rgb(77, 77, 77);
+  transition: width 1s ease-out;
+  padding: 10px 3px;
+}
+
+.header-logo {
+  text-decoration: none;
+  color: black;
+  font-size: 30px;
+  font-weight: 900;
+}
+
+.header-links {
+  margin-right: 20px;
+  font-size: medium;
+}
+
+.header-icons {
+  display: none;
+  margin-right: 5px;
+}
+
+.header-icons i {
+  padding: 19px 10px;
+}
+
+.header-icons i:hover {
+  color: orange;
+}
+
+.sign-in-link,
+.store-link {
+  color: grey;
+  margin: 5px;
+  border: none;
+}
+
+.sign-in-link:hover,
+.store-link:hover {
+  color: orange;
+  transition: color 0.7s, background-color 0.7s;
+  border: none;
+}
+
+.sign-in-logo {
+  color: black;
+}
+
+@media screen and (max-width: 750px) {
+  .header {
+    justify-content: space-between;
+    position: fixed;
+    top: 0px;
+  }
+
+  .sidebar-menu-btn {
+    display: block;
+  }
+  .header-links {
+    display: none;
+    margin-right: 20px;
+  }
+
+  .header-icons {
+    display: block;
+    margin-right: 5px;
+  }
+
+  .header-search {
+    margin-left: 30px;
+  }
+
+  .header-search .search-bar {
+    position: fixed;
+    top: 60px;
+    left: -5px;
+    width: 100vw;
+    height: 45px;
+    z-index: 2;
+  }
+
+  .header-logo {
+    font-size: 25px;
+  }
+
+  .sign-in-btn,
+  .store-btn {
+    background-color: white;
+    color: grey;
+    margin: 5px;
+    border: none;
+  }
+}

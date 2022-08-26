@@ -1,0 +1,100 @@
+.sign-in {
+  margin-bottom: 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.sign-in-page-lable {
+  text-align: center;
+  padding: 10px;
+}
+
+.sign-in-page-lable::after {
+  content: "";
+  display: block;
+  height: 2px;
+  width: 900px;
+  background-color: black;
+  margin-top: 5px;
+}
+
+.sign-in-form input {
+  width: 400px;
+  height: 40px;
+  padding: 5px;
+}
+
+.form {
+  display: flex;
+  flex-direction: row;
+  max-width: 900px;
+  padding: 20px 0px;
+}
+
+.form-left {
+  margin: 10px;
+}
+
+.form-left h3 {
+  margin: 15px 0px;
+}
+
+.form-left p {
+  margin: 10px 0px;
+  line-height: 2rem;
+}
+
+.sign-in-btn {
+  width: 400px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: white;
+  background-color: black;
+  border: none;
+  margin: 20px 0px;
+  cursor: pointer;
+}
+
+.form-right {
+  margin: 10px;
+  margin-left: 20px;
+}
+
+.form-right h3 {
+  margin: 15px 0px;
+}
+
+.form-right p {
+  margin: 10px 0px 20px 0px;
+  line-height: 2rem;
+}
+
+.create-account-btn {
+  text-decoration: none;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: white;
+  background-color: black;
+  border: none;
+  padding: 8px 10px;
+}
+
+@media screen and (max-width: 750px) {
+  .form {
+    flex-direction: column;
+  }
+
+  .sign-in-form input {
+    width: 100%;
+  }
+
+  .form-left {
+    margin: 10px 15px;
+  }
+
+  .sign-in-btn {
+    width: 100%;
+  }
+}

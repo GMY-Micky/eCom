@@ -1,0 +1,80 @@
+.caro-slider {
+  margin: 25px;
+}
+
+.slick-arr {
+  position: absolute;
+  cursor: pointer;
+  font-size: 2.5rem;
+  z-index: 5;
+  background-color: white;
+  height: 60px;
+  width: 30px;
+}
+
+.slick-arr.left {
+  left: 0;
+  top: 40%;
+}
+
+.slick-arr.right {
+  right: 0;
+  top: 40%;
+}
+
+.card {
+  width: 15vw;
+  height: 25vw;
+}
+
+.card:hover {
+  background-color: rgb(238, 238, 238);
+}
+
+.card img {
+  height: 20vw;
+  width: 15vw;
+  object-fit: cover;
+}
+
+.card-details {
+  margin-top: 10px;
+}
+
+.card-details .title {
+  font-size: 1.2vmax;
+}
+
+.card-details .body {
+  font-size: 1.3vmax;
+  font-weight: bolder;
+}
+
+@media screen and (max-width: 750px) {
+  .caro-slider {
+    width: 70vw;
+    margin-top: 20px;
+  }
+
+  .card {
+    height: 90vw;
+  }
+
+  .card img {
+    height: 75vw;
+    width: 75vw;
+  }
+
+  .card-details {
+    text-align: center;
+  }
+
+  .card-details .title {
+    font-size: 2vmax;
+  }
+
+  .card-details .body {
+    font-size: 2.5vmax;
+    font-weight: bolder;
+  }
+}

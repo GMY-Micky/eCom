@@ -1,0 +1,72 @@
+.gallery {
+  width: 100vw;
+  height: auto;
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.gallery-tag h1 {
+  background-color: black;
+  color: white;
+  margin: 20px;
+  font-size: 1.4rem;
+  padding: 10px 20px;
+}
+
+.gallery-tag p {
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+  color: rgb(97, 97, 97);
+}
+
+.gallery-images {
+  width: 100vw;
+  height: 35vw;
+  overflow-x: scroll;
+}
+
+.gallery-images::-webkit-scrollbar {
+  display: none;
+}
+
+.gallery-images {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  padding: 0 4px;
+}
+
+.row img {
+  margin: 5px;
+  height: 16vw;
+  width: auto;
+}
+
+.gallery-text {
+  width: 80vw;
+  margin: 20px 0px;
+}
+
+/* Responsive layout - makes a two column-layout instead of four columns */
+@media (max-width: 750px) {
+  .gallery-images {
+    height: 90vw;
+  }
+
+  .row img {
+    height: 42vw;
+  }
+
+  .gallery-text {
+    width: 90vw;
+    margin: 30px 0px;
+  }
+}
