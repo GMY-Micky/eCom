@@ -47,14 +47,14 @@ const SignUp = () => {
           body: JSON.stringify(data),
         });
 
-        const res = data.json();
+        const res = await response.json();
         console.log(res);
         // localStorage.clear();
         // localStorage.setItem("Data", JSON.stringify(data));
         if (warning) setWarning(false);
         if (notEqual) setNotEqual(false);
         setDisable(true);
-        //navigate("/sign-in");
+        navigate("/sign-in");
       }
     } else {
       setWarning(true);
