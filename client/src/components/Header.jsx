@@ -1,11 +1,24 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "../css/header.css";
 import { Link } from "react-router-dom";
 import SideBarMenu from "./SideBarMenu";
+import { BiChevronDown } from "react-icons/bi";
 
 const Header = () => {
   const [clickMenu, setClickMenu] = useState(false);
   const [clickSearch, setClickSearch] = useState(false);
+  const [firstName, setFirstName] = useState("");
+  const [userName, setUserName] = useState(false);
+  const [signOut, setSignOut] = useState(false);
+
+  useEffect(() => {
+    const firstName = localStorage.getItem("firstName");
+
+    setFirstName(firstName);
+    setUserName(true);
+  }, []);
+
+  const user = () => {};
 
   const handleMenu = () => {
     if (clickSearch === true) {
@@ -50,9 +63,16 @@ const Header = () => {
         </Link>
       </div>
       <div className="header-links">
-        <Link to="/login" className="sign-in-link">
-          sign in
-        </Link>
+        {!userName ? (
+          <Link to="/login" className="sign-in-link">
+            sign in
+          </Link>
+        ) : (
+          <div className="user-info" onClick={user}>
+            <span className="user-name">{firstName}</span>
+            <BiChevronDown className="down-arrow" />
+          </div>
+        )}
       </div>
     </div>
   );

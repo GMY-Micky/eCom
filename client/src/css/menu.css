@@ -6,6 +6,7 @@
   border-bottom: 1px solid rgb(82, 82, 82);
   position: sticky;
   top: 0;
+  font-weight: 400;
 }
 
 .hamburger {
@@ -26,7 +27,8 @@
 }
 
 nav a {
-  padding: 14px 30px;
+  padding: 14px 15px;
+  margin: 3px 4px;
   color: rgb(59, 59, 59);
   display: flex;
   flex-direction: row;
@@ -38,12 +40,12 @@ nav a:hover {
 }
 
 nav a:hover div.menu_down_btn {
-  display: none;
+  visibility: hidden;
 }
 
 nav a h6 {
-  margin: 3px 3px;
-  font-size: 10px;
+  font-size: 13px;
+  font-weight: bold;
 }
 
 nav a div h6 {
@@ -84,7 +86,7 @@ nav a:hover div.sub_menu {
   flex-direction: row;
   justify-content: space-around;
   width: 70vw;
-  font-size: 0.8rem;
+  font-size: 0.7rem;
 }
 
 .level-3-list {
@@ -93,12 +95,13 @@ nav a:hover div.sub_menu {
 
 .level-3 {
   line-height: 30px;
+  font-weight: 500;
   list-style: none;
-  color: rgb(99, 99, 99);
+  color: rgb(83, 83, 83);
 }
 
 .level-3.main {
-  font-weight: 900;
+  font-weight: bold;
   color: rgb(36, 36, 36);
 }
 

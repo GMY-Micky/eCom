@@ -30,7 +30,7 @@ const SignIn = () => {
       if (res.status === "ok") {
         localStorage.clear();
         localStorage.setItem("token", res.token);
-
+        localStorage.setItem("firstName", res.user.firstName);
         setInvalidCre(false);
         setWarning(false);
         navigate("/");
