@@ -45,12 +45,12 @@ const Header = () => {
         </Link>
       </div>
       <div className="header-icons">
-        <Link to="/sign-in" className="sign-in-logo">
+        <Link to="/login" className="sign-in-logo">
           <i className="fas fa-user-circle"></i>
         </Link>
       </div>
       <div className="header-links">
-        <Link to="/sign-in" className="sign-in-link">
+        <Link to="/login" className="sign-in-link">
           sign in
         </Link>
       </div>

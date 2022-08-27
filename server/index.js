@@ -28,7 +28,7 @@ app.post("/api/register", async (req, res) => {
   }
 });
 
-app.get("/api/login", async (req, res) => {
+app.post("/api/login", async (req, res) => {
   const user = await User.findOne({
     email: req.body.email,
     password: req.body.password,
@@ -37,7 +37,7 @@ app.get("/api/login", async (req, res) => {
   if (user) {
     return res.send({ status: "ok", user: true });
   } else {
-    return res.send({ status: "error", user: fasle });
+    return res.send({ status: "error", user: false });
   }
 });
 

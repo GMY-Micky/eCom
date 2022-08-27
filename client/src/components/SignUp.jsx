@@ -54,7 +54,7 @@ const SignUp = () => {
         if (warning) setWarning(false);
         if (notEqual) setNotEqual(false);
         setDisable(true);
-        navigate("/sign-in");
+        navigate("/login");
       }
     } else {
       setWarning(true);

@@ -5,18 +5,41 @@ import "../css/signIn.css";
 const SignIn = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [warning, setWarning] = useState("");
-
+  const [warning, setWarning] = useState();
+  const [invalidCre, setInvalidCre] = useState();
   const navigate = useNavigate();
 
-  const submitHandle = (e) => {
+  async function submitHandle(e) {
     e.preventDefault();
 
     if (email && password) {
-      setWarning(false);
-      navigate("/");
-    } else setWarning(true);
-  };
+      const data = {
+        email,
+        password,
+      };
+
+      const response = await fetch("http://localhost:8000/api/login", {
+        method: "POST",
+        headers: {
+          "content-Type": "application/json",
+        },
+        body: JSON.stringify(data),
+      });
+
+      const res = await response.json();
+      if (res.user == true) {
+        setInvalidCre(false);
+        setWarning(false);
+        navigate("/");
+      } else {
+        setInvalidCre(true);
+        setWarning(false);
+      }
+    } else {
+      setWarning(true);
+      setInvalidCre(false);
+    }
+  }
 
   return (
     <div className="sign-in" style={{ marginTop: "60px" }}>
@@ -32,6 +55,9 @@ const SignIn = () => {
             <form onSubmit={submitHandle}>
               {warning && (
                 <p className="warning">Please Fill the form completely</p>
+              )}
+              {invalidCre && (
+                <p className="warning">Invalid email or password</p>
               )}
               <label htmlFor="email">
                 <span className="input-lable">Email</span>
@@ -65,7 +91,7 @@ const SignIn = () => {
               update and share your wishlist, edit billing/shipping info and
               more.
             </p>
-            <Link to="/sign-up" className="create-account-btn">
+            <Link to="/register" className="create-account-btn">
               Create Account
             </Link>
           </div>
