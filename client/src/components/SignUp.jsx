@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "../css/signUp.css";
+// const { expressjwt: jwt } = require("express-jwt");
 
 const SignUp = () => {
   const [firstName, setFirstName] = useState("");

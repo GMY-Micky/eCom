@@ -27,7 +27,10 @@ const SignIn = () => {
       });
 
       const res = await response.json();
-      if (res.user == true) {
+      if (res.status === "ok") {
+        localStorage.clear();
+        localStorage.setItem("token", res.token);
+
         setInvalidCre(false);
         setWarning(false);
         navigate("/");

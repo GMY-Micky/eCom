@@ -3,6 +3,8 @@ const app = express();
 const cors = require("cors");
 const mongoose = require("mongoose");
 const User = require("./models/user.model");
+const jwt = require("jsonwebtoken");
+const bcrypt = require("bcryptjs");
 
 app.use(cors());
 app.use(express.json());
@@ -16,11 +18,12 @@ mongoose.connect(
 
 app.post("/api/register", async (req, res) => {
   try {
+    const cryptedPassword = await bcrypt.hash(req.body.password, 10);
     await User.create({
       firstName: req.body.firstName,
       lastName: req.body.lastName,
       email: req.body.email,
-      password: req.body.password,
+      password: cryptedPassword,
     });
     res.json({ status: "ok" });
   } catch (err) {
@@ -31,11 +34,33 @@ app.post("/api/register", async (req, res) => {
 app.post("/api/login", async (req, res) => {
   const user = await User.findOne({
     email: req.body.email,
-    password: req.body.password,
+    //password: req.body.password,
   });
 
-  if (user) {
-    return res.send({ status: "ok", user: true });
+  if (!user) {
+    return { status: "error", error: "Invalid login" };
+  }
+
+  const isPassword = await bcrypt.compare(req.body.password, user.password);
+
+  if (isPassword) {
+    const token = jwt.sign(
+      {
+        firstName: user.firstName,
+        lastName: user.lastName,
+        email: user.email,
+      },
+      "97732444030"
+    );
+    return res.send({
+      status: "ok",
+      token: token,
+      user: {
+        firstName: user.firstName,
+        lastName: user.lastName,
+        email: user.email,
+      },
+    });
   } else {
     return res.send({ status: "error", user: false });
   }
