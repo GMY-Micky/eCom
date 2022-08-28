@@ -19,7 +19,7 @@ const Header = () => {
     } else {
       setUserName(false);
     }
-  }, [setUserName]);
+  }, []);
 
   const navigate = useNavigate();
 
