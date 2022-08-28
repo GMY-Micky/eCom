@@ -57,10 +57,14 @@ const SignIn = () => {
             </p>
             <form onSubmit={submitHandle}>
               {warning && (
-                <p className="warning">Please Fill the form completely</p>
+                <p className="warning" style={{ color: "red" }}>
+                  Please Fill the form completely
+                </p>
               )}
               {invalidCre && (
-                <p className="warning">Invalid email or password</p>
+                <p className="warning" style={{ color: "red" }}>
+                  Invalid email or password
+                </p>
               )}
               <label htmlFor="email">
                 <span className="input-lable">Email</span>

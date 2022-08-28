@@ -27,9 +27,14 @@
   background-color: black;
 }
 
+h3 {
+  font-weight: 600;
+}
+
 .input-lable {
   font-size: 0.9rem;
-  font-weight: 600;
+  font-weight: bold;
+  color: rgb(82, 82, 82);
 }
 
 .submit-btn {
@@ -46,6 +51,10 @@
 .warning,
 .not-equal {
   color: red;
+}
+
+p.acc-exists {
+  color: black;
 }
 
 @media screen and (max-width: 750px) {

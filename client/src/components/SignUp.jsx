@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import "../css/signUp.css";
 // const { expressjwt: jwt } = require("express-jwt");
 
@@ -35,9 +35,7 @@ const SignUp = () => {
           firstName,
           lastName,
           email,
-          confirmEmail,
           password,
-          confirmPassword,
         };
 
         const response = await fetch("http://localhost:8000/api/register", {
@@ -148,6 +146,10 @@ const SignUp = () => {
             value="Sign Up"
             disabled={disable}
           />
+          <br />
+          <Link to="/login">
+            <p className="acc-exist">Already have an account</p>
+          </Link>
         </form>
       </div>
     </div>

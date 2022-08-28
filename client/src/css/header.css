@@ -2,9 +2,8 @@
   background-color: rgb(238, 238, 238);
   height: 60px;
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
-  z-index: 10;
   min-width: 350px;
   overflow: hidden;
   width: 100vw;
@@ -97,11 +96,39 @@
   padding: 5px;
 }
 
-.user-name {
-  font-size: 14px;
+.user-info:hover {
+  color: orange;
 }
 
-.user-info:hover {
+.user-info:hover .down-arrow {
+  visibility: hidden;
+}
+
+.user-name {
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.signout-btn {
+  position: absolute;
+  right: 0px;
+  margin-top: 5px;
+  width: auto;
+  height: 100px;
+  border: 1px solid rgb(211, 211, 211);
+  background-color: rgb(247, 247, 247);
+  z-index: 5;
+  padding: 5px;
+}
+
+.signout-btn p {
+  font-size: small;
+  font-weight: bold;
+  color: rgb(103, 103, 103);
+  padding: 5px 10px;
+  border-bottom: 1px solid rgb(156, 156, 156);
+}
+.signout-btn p:hover {
   color: orange;
 }
 

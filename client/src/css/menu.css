@@ -1,12 +1,12 @@
 .main-menu {
+  position: relative;
   display: block;
   height: 50px;
   background-color: rgb(235, 235, 235);
-  z-index: 2;
   border-bottom: 1px solid rgb(82, 82, 82);
-  position: sticky;
-  top: 0;
   font-weight: 400;
+  width: 100%;
+  z-index: 0;
 }
 
 .hamburger {
@@ -86,7 +86,7 @@ nav a:hover div.sub_menu {
   flex-direction: row;
   justify-content: space-around;
   width: 70vw;
-  font-size: 0.7rem;
+  font-size: 0.8rem;
 }
 
 .level-3-list {
@@ -95,13 +95,14 @@ nav a:hover div.sub_menu {
 
 .level-3 {
   line-height: 30px;
-  font-weight: 500;
+  font-weight: bold;
   list-style: none;
   color: rgb(83, 83, 83);
 }
 
 .level-3.main {
   font-weight: bold;
+  font-size: 14px;
   color: rgb(36, 36, 36);
 }
 

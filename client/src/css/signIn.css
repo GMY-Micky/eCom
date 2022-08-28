@@ -8,6 +8,7 @@
 
 .sign-in-page-lable {
   text-align: center;
+  font-weight: bold;
   padding: 10px;
 }
 
@@ -39,11 +40,13 @@
 
 .form-left h3 {
   margin: 15px 0px;
+  font-weight: bold;
 }
 
 .form-left p {
   margin: 10px 0px;
   line-height: 2rem;
+  color: rgb(65, 65, 65);
 }
 
 .sign-in-btn {
@@ -64,11 +67,13 @@
 
 .form-right h3 {
   margin: 15px 0px;
+  font-weight: bold;
 }
 
 .form-right p {
   margin: 10px 0px 20px 0px;
   line-height: 2rem;
+  color: rgb(65, 65, 65);
 }
 
 .create-account-btn {

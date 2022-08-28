@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import "../css/header.css";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import SideBarMenu from "./SideBarMenu";
 import { BiChevronDown } from "react-icons/bi";
 
@@ -9,16 +9,29 @@ const Header = () => {
   const [clickSearch, setClickSearch] = useState(false);
   const [firstName, setFirstName] = useState("");
   const [userName, setUserName] = useState(false);
-  const [signOut, setSignOut] = useState(false);
+  const [userMenu, setUserMenu] = useState(false);
 
   useEffect(() => {
     const firstName = localStorage.getItem("firstName");
+    if (firstName) {
+      setUserName(true);
+      setFirstName(firstName);
+    } else {
+      setUserName(false);
+    }
+  }, [setUserName]);
 
-    setFirstName(firstName);
-    setUserName(true);
-  }, []);
+  const navigate = useNavigate();
 
-  const user = () => {};
+  const user = () => {
+    setUserMenu(!userMenu);
+  };
+
+  const signout = () => {
+    localStorage.clear();
+    setUserName(false);
+    navigate("/login");
+  };
 
   const handleMenu = () => {
     if (clickSearch === true) {
@@ -69,8 +82,14 @@ const Header = () => {
           </Link>
         ) : (
           <div className="user-info" onClick={user}>
+            <i className="fas fa-user-circle" style={{ margin: "0px 5px" }}></i>
             <span className="user-name">{firstName}</span>
             <BiChevronDown className="down-arrow" />
+            {userMenu && (
+              <div className="signout-btn">
+                <p onClick={signout}>log Out</p>
+              </div>
+            )}
           </div>
         )}
       </div>
