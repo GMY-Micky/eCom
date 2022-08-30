@@ -1,25 +1,20 @@
-import React, { useState, useEffect } from "react";
+import React, { useState,useEffect } from "react";
 import "../css/header.css";
 import { Link, useNavigate } from "react-router-dom";
 import SideBarMenu from "./SideBarMenu";
 import { BiChevronDown } from "react-icons/bi";
+import { useSelector } from "react-redux";
 
 const Header = () => {
   const [clickMenu, setClickMenu] = useState(false);
   const [clickSearch, setClickSearch] = useState(false);
-  const [firstName, setFirstName] = useState("");
   const [userName, setUserName] = useState(false);
   const [userMenu, setUserMenu] = useState(false);
+  const firstName =  useSelector(state =>state.profile.value)
 
   useEffect(() => {
-    const firstName = localStorage.getItem("firstName");
-    if (firstName) {
-      setUserName(true);
-      setFirstName(firstName);
-    } else {
-      setUserName(false);
-    }
-  }, []);
+    setUserName(true);
+  }, [firstName])
 
   const navigate = useNavigate();
 
@@ -30,6 +25,7 @@ const Header = () => {
   const signout = () => {
     localStorage.clear();
     setUserName(false);
+    setUserMenu(false);
     navigate("/login");
   };
 

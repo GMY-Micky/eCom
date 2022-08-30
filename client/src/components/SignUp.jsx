@@ -38,7 +38,7 @@ const SignUp = () => {
           password,
         };
 
-        const response = await fetch("http://localhost:8000/api/register", {
+        const response = await fetch("http://localhost:3001/api/register", {
           method: "POST",
           headers: {
             "content-Type": "application/json",

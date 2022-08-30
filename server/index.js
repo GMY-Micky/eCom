@@ -6,6 +6,8 @@ const User = require("./models/user.model");
 const jwt = require("jsonwebtoken");
 const bcrypt = require("bcryptjs");
 
+const PORT = "3001";
+
 app.use(cors());
 app.use(express.json());
 mongoose.connect(
@@ -65,6 +67,6 @@ app.post("/api/login", async (req, res) => {
   }
 });
 
-app.listen(8000, () => {
-  console.log("server is running..");
+app.listen(PORT, () => {
+  console.log(`server is running on PORT ${PORT}`);
 });
