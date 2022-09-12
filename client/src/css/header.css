@@ -1,0 +1,179 @@
+.header {
+  background-color: rgb(238, 238, 238);
+  height: 60px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  min-width: 350px;
+  overflow: hidden;
+  width: 100vw;
+}
+
+.left-head {
+  display: flex;
+}
+
+.sidebar-menu-btn {
+  display: none;
+  border: none;
+  font-size: 1.1rem;
+  padding: 3px;
+  padding: 10px;
+  background-color: rgb(238, 238, 238);
+  cursor: pointer;
+}
+
+.search-btn {
+  border: none;
+  font-size: 1.1rem;
+  padding: 3px;
+  padding: 10px;
+  background-color: rgb(238, 238, 238);
+}
+
+.search-btn:hover {
+  color: orange;
+}
+
+.header-search .search-bar {
+  height: 35px;
+  outline: none;
+  border: none;
+  margin-left: 5px;
+  background-color: rgb(226, 226, 226);
+  color: rgb(77, 77, 77);
+  transition: width 1s ease-out;
+  padding: 10px 3px;
+}
+
+.header-logo {
+  text-decoration: none;
+  color: black;
+  font-size: 30px;
+  font-weight: 900;
+}
+
+.header-links {
+  margin-right: 20px;
+  font-size: medium;
+}
+
+.header-icons {
+  display: none;
+  margin-right: 5px;
+}
+
+.header-icons i {
+  padding: 19px 10px;
+}
+
+.header-icons i:hover {
+  color: orange;
+}
+
+.sign-in-link,
+.store-link {
+  color: grey;
+  margin: 5px;
+  border: none;
+}
+
+.sign-in-link:hover,
+.store-link:hover {
+  color: orange;
+  transition: color 0.7s, background-color 0.7s;
+  border: none;
+}
+
+.sign-in-logo {
+  color: black;
+}
+
+.user-info {
+  font-size: 14px;
+  font-weight: 600;
+  color: rgb(45, 45, 45);
+  padding: 5px;
+}
+
+.user-info:hover {
+  color: orange;
+}
+
+.user-info:hover .down-arrow {
+  visibility: hidden;
+}
+
+.user-name {
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.signout-btn {
+  position: absolute;
+  right: 0px;
+  margin-top: 5px;
+  width: auto;
+  height: 100px;
+  border: 1px solid rgb(211, 211, 211);
+  background-color: rgb(247, 247, 247);
+  z-index: 5;
+  padding: 5px;
+}
+
+.signout-btn p {
+  font-size: small;
+  font-weight: bold;
+  color: rgb(103, 103, 103);
+  padding: 5px 10px;
+  border-bottom: 1px solid rgb(156, 156, 156);
+}
+.signout-btn p:hover {
+  color: orange;
+}
+
+@media screen and (max-width: 750px) {
+  .header {
+    justify-content: space-between;
+    position: fixed;
+    top: 0px;
+  }
+
+  .sidebar-menu-btn {
+    display: block;
+  }
+  .header-links {
+    display: none;
+    margin-right: 20px;
+  }
+
+  .header-icons {
+    display: block;
+    margin-right: 5px;
+  }
+
+  .header-search {
+    margin-left: 30px;
+  }
+
+  .header-search .search-bar {
+    position: fixed;
+    top: 60px;
+    left: -5px;
+    width: 100vw;
+    height: 45px;
+    z-index: 2;
+  }
+
+  .header-logo {
+    font-size: 25px;
+  }
+
+  .sign-in-btn,
+  .store-btn {
+    background-color: white;
+    color: grey;
+    margin: 5px;
+    border: none;
+  }
+}

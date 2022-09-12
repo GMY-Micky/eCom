@@ -1,0 +1,81 @@
+.slider-container {
+  height: 30vw;
+  width: 95vw;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  border-top: 2px solid black;
+  border-bottom: 2px solid black;
+}
+
+.side-link {
+  flex: 20%;
+  height: 30vw;
+  text-align: center;
+}
+
+.side-link h3 {
+  position: relative;
+  top: 45%;
+  font-weight: bolder;
+  font-size: 1.5vmax;
+}
+
+.side-link .link .arrow {
+  font-weight: 700;
+  font-size: 0.8vmx;
+  margin-left: 8px;
+}
+
+.side-link .link {
+  text-decoration: none;
+  color: #000;
+  position: relative;
+  top: 46%;
+  font-weight: 900;
+  font-size: 0.8vmax;
+}
+
+.side-link .link:hover {
+  color: orange;
+}
+
+.slider-container .carousel {
+  flex: 80%;
+  height: 23vw;
+  width: 80%;
+  margin-bottom: 70px;
+  margin-right: 20px;
+}
+
+@media screen and (max-width: 750px) {
+  .slider-container {
+    flex-direction: column;
+    height: auto;
+    width: 90vw;
+  }
+
+  .slider-container .side-link {
+    width: 90vw;
+    height: auto;
+  }
+  .slider-container .carousel {
+    width: 85vw;
+    margin: 0px;
+  }
+
+  .side-link h3 {
+    font-size: 2.5vmax;
+  }
+
+  .side-link {
+    margin-top: 20px;
+  }
+
+  .side-link .link,
+  .side-link .link .arrow {
+    font-size: 1.2vmax;
+  }
+}

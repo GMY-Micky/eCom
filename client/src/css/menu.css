@@ -1,0 +1,113 @@
+.main-menu {
+  position: relative;
+  display: block;
+  height: 50px;
+  background-color: rgb(235, 235, 235);
+  border-bottom: 1px solid rgb(82, 82, 82);
+  font-weight: 400;
+  width: 100%;
+  z-index: 0;
+}
+
+.hamburger {
+  display: none;
+}
+
+.ham-bar {
+  background-color: black;
+  height: 2px;
+  width: 20px;
+  margin-bottom: 5px;
+}
+
+.menu_items {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+nav a {
+  padding: 14px 15px;
+  margin: 3px 4px;
+  color: rgb(59, 59, 59);
+  display: flex;
+  flex-direction: row;
+}
+
+nav a:hover {
+  color: orange;
+  border-bottom: 3px solid orange;
+}
+
+nav a:hover div.menu_down_btn {
+  visibility: hidden;
+}
+
+nav a h6 {
+  font-size: 13px;
+  font-weight: bold;
+}
+
+nav a div h6 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+nav a div.sub_menu {
+  position: absolute;
+  top: 50px;
+  left: 0px;
+  background-color: rgb(223, 223, 223);
+  height: auto;
+  width: 100%;
+  color: rgb(141, 141, 141);
+  justify-content: center;
+  align-items: center;
+  z-index: 3;
+  transform: scaleY(0);
+  transition: transform 250ms ease;
+  transform-origin: top;
+}
+
+nav a:hover div.sub_menu {
+  transform: scaleY(1);
+}
+
+.sub-menu-lists {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 30px;
+}
+
+.level-2-list {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  width: 70vw;
+  font-size: 0.8rem;
+}
+
+.level-3-list {
+  list-style: none;
+}
+
+.level-3 {
+  line-height: 30px;
+  font-weight: bold;
+  list-style: none;
+  color: rgb(83, 83, 83);
+}
+
+.level-3.main {
+  font-weight: bold;
+  font-size: 14px;
+  color: rgb(36, 36, 36);
+}
+
+@media screen and (max-width: 750px) {
+  .main-menu {
+    display: none;
+  }
+}
