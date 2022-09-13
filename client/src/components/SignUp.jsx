@@ -38,7 +38,7 @@ const SignUp = () => {
           password,
         };
 
-        const response = await fetch("http://localhost:8000/api/register", {
+        const response = await fetch("http://localhost:8000/user/signup", {
           method: "POST",
           headers: {
             "content-Type": "application/json",
@@ -48,12 +48,14 @@ const SignUp = () => {
 
         const res = await response.json();
         console.log(res);
-        // localStorage.clear();
-        // localStorage.setItem("Data", JSON.stringify(data));
-        if (warning) setWarning(false);
-        if (notEqual) setNotEqual(false);
-        setDisable(true);
-        navigate("/login");
+        if (res.status === "ok") {
+          // localStorage.clear();
+          // localStorage.setItem("Data", JSON.stringify(data));
+          if (warning) setWarning(false);
+          if (notEqual) setNotEqual(false);
+          setDisable(true);
+          navigate("/login");
+        }
       }
     } else {
       setWarning(true);

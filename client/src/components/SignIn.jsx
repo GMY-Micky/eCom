@@ -18,7 +18,7 @@ const SignIn = () => {
         password,
       };
 
-      const response = await fetch("http://localhost:8000/api/login", {
+      const response = await fetch("http://localhost:8000/user/signin", {
         method: "POST",
         headers: {
           "content-Type": "application/json",
