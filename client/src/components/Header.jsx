@@ -1,4 +1,4 @@
-import React, { useState,useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import "../css/header.css";
 import { Link, useNavigate } from "react-router-dom";
 import SideBarMenu from "./SideBarMenu";
@@ -10,11 +10,14 @@ const Header = () => {
   const [clickSearch, setClickSearch] = useState(false);
   const [userName, setUserName] = useState(false);
   const [userMenu, setUserMenu] = useState(false);
-  const firstName =  useSelector(state =>state.profile.value)
+  const firstName = useSelector((state) => state.profile.value);
 
   useEffect(() => {
-    setUserName(true);
-  }, [firstName])
+    const firstName = localStorage.getItem("firstName");
+    if (firstName) {
+      setUserName(true);
+    }
+  }, [firstName]);
 
   const navigate = useNavigate();
 

@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import {useDispatch} from "react-redux"
+import { useDispatch } from "react-redux";
 import { setUsername } from "../redux/features/profileSlice";
 import "../css/signIn.css";
 
@@ -10,7 +10,7 @@ const SignIn = () => {
   const [warning, setWarning] = useState();
   const [invalidCre, setInvalidCre] = useState();
   const navigate = useNavigate();
-  const dispatch = useDispatch()
+  const dispatch = useDispatch();
 
   async function submitHandle(e) {
     e.preventDefault();
@@ -21,7 +21,7 @@ const SignIn = () => {
         password,
       };
 
-      const response = await fetch("http://localhost:3001/api/login", {
+      const response = await fetch("http://localhost:8000/user/signin", {
         method: "POST",
         headers: {
           "content-Type": "application/json",
@@ -33,8 +33,8 @@ const SignIn = () => {
       if (res.status === "ok") {
         localStorage.clear();
         localStorage.setItem("token", res.token);
-        localStorage.setItem("firstName", res.user.firstName);
-        dispatch(setUsername(res.user.firstName));
+        localStorage.setItem("firstName", res.firstName);
+        dispatch(setUsername(res.firstName));
         setInvalidCre(false);
         setWarning(false);
         navigate("/");
